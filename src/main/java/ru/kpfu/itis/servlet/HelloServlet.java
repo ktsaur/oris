@@ -1,4 +1,4 @@
-package ru.kpfu.itis.lesson3;
+package ru.kpfu.itis.servlet;
 
 import ru.kpfu.itis.lesson2.HttpClientImpl;
 
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet("/")
+
 public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

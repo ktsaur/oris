@@ -15,7 +15,7 @@ public class Sample1 {
 
         //get
         try {
-            URL url = new URL("https://jsonplaceholder.typicode.com/posts?userId=2");
+            URL url = new URL("http://localhost:8080/classwork_oris_war_exploded/");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Content-Type", "application/json");
@@ -29,14 +29,15 @@ public class Sample1 {
 
         //post
         try {
-            URL postUrl = new URL("https://gorest.co.in/public/v2/users");
+            URL postUrl = new URL("http://localhost:8080/classwork_oris_war_exploded/");
             HttpURLConnection postConnection = (HttpURLConnection) postUrl.openConnection();
             postConnection.setRequestMethod("POST");
             postConnection.setRequestProperty("Content-Type", "application/json");
             postConnection.setRequestProperty("Accept", "application/json");
             postConnection.setRequestProperty("Authorization", "Bearer 58762cdab4e248c10d165f6bbe89d18a444dff00267b6cfcec49acf9dceb94b7");
             postConnection.setDoOutput(true);
-            String jsonInput = "{\"name\": \"Sen Anala Iyer\",\"email\": \"dse_anala_iyer123@stroman-leannon.test\",\"gender\": \"female\",\"status\": \"active\"}";
+            //String jsonInput = "{\"userId\": \"78\",\"id\": \"78\",\"title\": \"new title\",\"body\": \"new body\"}";
+            String jsonInput = "Hello World 2";
             try (OutputStream outputStream = postConnection.getOutputStream()) {
                 byte[] input = jsonInput.getBytes(StandardCharsets.UTF_8);
                 outputStream.write(input, 0, input.length);
@@ -51,15 +52,14 @@ public class Sample1 {
 
         //put
         try {
-            URL putUrl = new URL("https://gorest.co.in/public/v2/users/7500457");
+            URL putUrl = new URL("https://jsonplaceholder.typicode.com/posts/1");
             HttpURLConnection putConnection = (HttpURLConnection) putUrl.openConnection();
             putConnection.setRequestMethod("PUT");
             putConnection.setRequestProperty("Content-Type", "application/json");
             putConnection.setRequestProperty("Accept", "application/json");
             putConnection.setRequestProperty("Authorization", "Bearer 58762cdab4e248c10d165f6bbe89d18a444dff00267b6cfcec49acf9dceb94b7");
             putConnection.setDoOutput(true);
-            String newEmail = "{\"email\": \"dsen_anala_iyer123@stroman-leannon.test\"}";
-            String jsonInput = "{\"name\": \"Sergei Smith\"," + newEmail + ",\"gender\": \"male\",\"status\": \"active\"}";
+            String jsonInput = "{\"title\": \"title\"}";
             try (OutputStream outputStream = putConnection.getOutputStream()) {
                 byte[] input = jsonInput.getBytes(StandardCharsets.UTF_8);
                 outputStream.write(input, 0, input.length);
@@ -71,9 +71,9 @@ public class Sample1 {
             throw new RuntimeException(e);
         }
 
-        //delete
+//        //delete
         try {
-            URL deleteUrl = new URL("https://gorest.co.in/public/v2/users/7500457");
+            URL deleteUrl = new URL("https://jsonplaceholder.typicode.com/posts/1");
             HttpURLConnection deleteConnection = (HttpURLConnection) deleteUrl.openConnection();
             deleteConnection.setRequestMethod("DELETE");
             deleteConnection.setRequestProperty("Content-Type", "application/json");
@@ -86,7 +86,7 @@ public class Sample1 {
         }
     }
 
-    private static String readResponse(HttpURLConnection connection) throws IOException {
+    public static String readResponse(HttpURLConnection connection) throws IOException {
         if (connection != null) {
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
                 StringBuilder content = new StringBuilder();
