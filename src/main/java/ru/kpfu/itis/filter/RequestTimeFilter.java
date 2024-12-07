@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 
-@WebFilter(urlPatterns = "/*")
+//@WebFilter(urlPatterns = "")
 public class RequestTimeFilter implements Filter { //фильтр для замера времени выполнения запроса
     private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 

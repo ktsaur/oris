@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@WebFilter(urlPatterns = "/*")
+//@WebFilter(urlPatterns = "")
 public class LoggingFilter implements Filter {
 
     private ServletContext servletContext;

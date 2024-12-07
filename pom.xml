@@ -6,7 +6,7 @@
 
     <groupId>ru.kpfu.itis</groupId>
     <artifactId>classwork_oris</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>war</packaging>
 
     <properties>
@@ -70,6 +70,13 @@
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
