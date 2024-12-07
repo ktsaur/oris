@@ -9,7 +9,7 @@ FROM tomcat:10.1.33-jdk21-temurin
 
 WORKDIR /usr/local/tomcat
 
-COPY --from=build /home/app/target/classwork_oris-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=build /home/app/target/classwork_oris-1.0.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
 
